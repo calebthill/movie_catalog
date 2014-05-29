@@ -1,0 +1,19 @@
+<h2><%= params["actor"] %></h2>
+
+<table>
+    <tr>
+      <th>Movies</th>
+      <th>Character</th>
+    </tr>
+
+    <% @actors.each do |key| %>
+    <tr>
+      <td>
+      <%= key["movies"] %>
+      </td>
+       <td>
+      <%= key["cast"] %>
+      </td>
+    </tr>
+    <% end %>
+  </table>

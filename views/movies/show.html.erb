@@ -9,7 +9,7 @@
 <h4> Actors: </h4>
 <ul>
 <% @movies.each do |key| %>
-<li><%= key["actor"] %></li>
+<li><a href = "/actors/<%= key["actor"] %>"><%= key["actor"] %></a></li>
 <% end %>
 </ul>
 
@@ -19,6 +19,10 @@
 <li><%= key["character"] %></li>
 <% end %>
 </ul>
+
+
+
+
 
 
 

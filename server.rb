@@ -61,13 +61,18 @@ end
 
 
 get '/actors/:actor' do
+  actor = params[:actor]
   query = "SELECT actors.name AS actor, movies.title AS movies, cast_members.character AS cast FROM movies
            JOIN genres ON movies.genre_id = genres.id
            JOIN studios ON movies.studio_id = studios.id
            JOIN cast_members ON movies.id = cast_members.movie_id
-           JOIN actors ON cast_members.actor_id = actors.id;"
+           JOIN actors ON cast_members.actor_id = actors.id WHERE actors.name = '#{params[:actor]}';"
 
-
+           actors_name = db_connection do |conn|
+          conn.exec(query)
+         end
+         @actors = actors_name.to_a
+erb :'/actors/show.html'
 end
 
 
