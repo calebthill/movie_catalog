@@ -1,0 +1,32 @@
+<h1> Movies </h1>
+
+
+<table>
+    <tr>
+      <th>Title</th>
+      <th>year</th>
+      <th>rating</th>
+      <th>genre</th>
+      <th>Studio</th>
+    </tr>
+
+    <% @movies.each do |key| %>
+    <tr>
+      <td>
+      <a href="/movies/<%= key["title"] %>"><%= key["title"] %></a>
+      </td>
+      <td>
+      <%= key["year"] %>
+      </td>
+       <td>
+      <%= key["rating"] %>
+      </td>
+       <td>
+      <%= key["genre"] %>
+      </td>
+       <td>
+      <%= key["studio"] %>
+      </td>
+    </tr>
+    <% end %>
+  </table>

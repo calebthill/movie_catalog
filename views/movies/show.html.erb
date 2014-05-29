@@ -1,0 +1,24 @@
+<h2><%= params["movie"] %></h2>
+
+<h4>Genre:</h4>
+<%= @movies.first["genre"]  %>
+
+<h4>studio:</h4>
+<%= @movies.first["studio"]  %>
+
+<h4> Actors: </h4>
+<ul>
+<% @movies.each do |key| %>
+<li><%= key["actor"] %></li>
+<% end %>
+</ul>
+
+<h4> Characters: </h4>
+<ul>
+<% @movies.each do |key| %>
+<li><%= key["character"] %></li>
+<% end %>
+</ul>
+
+
+
